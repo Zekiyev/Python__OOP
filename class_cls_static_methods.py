@@ -1,3 +1,6 @@
+import datetime
+
+
 #Class methods affects all instances by calling from a instances
 #It acceps firstly cls argument instead of self
 
@@ -28,6 +31,13 @@ class Employee:
     def set_raise_amount(cls, amount):
         cls.raise_amount = amount
         
+    @staticmethod
+    #withoud any required argument
+    def is_workday(day):
+        if day.weekday() == 5 or day.weekday() == 6:
+            return False
+        return True
+     
 emp3 = Employee('John', 'Wich', 10000)
 emp4 = Employee('Jennifer', 'Aniston', 12000)
 
@@ -43,3 +53,8 @@ my_str2 = 'Aaron-Dyche-11000'
 
 print(Employee.create_from_string(my_str1).surname)
 print(Employee.create_from_string(my_str2).name)
+
+
+my_date = datetime.date(2021, 7, 11)
+
+print(Employee.is_workday(my_date))
