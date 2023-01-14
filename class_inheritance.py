@@ -67,3 +67,12 @@ mgr_1.add_emp(dev_12)
 mgr_1.remove_emp(dev_12)
 
 mgr_1.print_emps()
+
+print(isinstance(mgr_1, Manager))
+print(isinstance(mgr_1, Employee))
+print(isinstance(mgr_1, Developer))
+
+print(issubclass(Developer, Employee))
+print(issubclass(Developer, Manager))
+print(issubclass(Manager, Employee))
+
